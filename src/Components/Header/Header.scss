@@ -1,0 +1,172 @@
+@import "../../index.scss";
+
+.header {
+    
+    background-color: #1E1E1E;
+    height: 10vh;
+    width: 100vw;
+
+    border-bottom: 1px solid gray;
+    // box-shadow: 0px 0px 10px #000000;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    -webkit-box-shadow: 1px 1px 10px 3px white; 
+    box-shadow: 1px 1px 10px 3px white;
+
+    .header__left {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        
+        .header__title {
+            font-family: sans-serif;
+            text-align: center;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.4);
+            background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #680bd1));
+            background: gradient(linear, left top, right top, from(#5d0ae3), to(#3505e0), color-stop(0.5, #220ad4));
+            background-size: 0px 100%;
+            background-clip: text;
+            animation-name: animateLogo;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        
+            font-size: 32px;
+            font-weight: bold;
+            
+            cursor: pointer;
+            
+            @include media("<=phone"){
+                font-size: 20px;
+                margin: 0 0 0 -5px;
+            }
+        
+        }
+        
+        @keyframes animateLogo {
+            0% {
+                    background-position: top left;
+                    background-size: 0px 100%;
+            }
+            10% {
+                    background-size: 40% 100%;
+            }
+            100% {
+                    background-position: right;
+                    background-size: 50px 100%;
+            }
+        }
+
+        
+
+    }
+
+    .header__right {
+        
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        margin-top: 2.5px;
+
+        .github--link {
+            text-decoration: none;
+        }
+
+        select {
+            background-color: #1E1E1E;
+            color: white;
+            border: 1px solid rgba(white, 0.7);
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0px 20px;
+            outline: none;
+
+            &:hover {
+                border-color: white;
+            }
+
+            @include media("<=phone"){
+                padding: 3px;
+                font-size: 12px;
+                margin: 0px 6px;
+            }
+        }
+
+        option {
+            font-size: 16px;
+
+            @include media("<=phone"){
+                padding: 5px;
+                font-size: 14px;
+                margin: 5px 8px;
+            }
+        }
+
+        .githubIcon {
+            opacity: 0.8;
+            transition: opacity 100ms;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            margin: 0px 20px;
+            transition: transform 0.5s ease;
+            
+            @include media("<=phone"){
+                font-size: 28px;
+                margin: 0px 3px;
+
+            }
+        }
+
+        .themeIcon {
+            background-color: rgb(183, 0, 255);
+            border-radius: 50%;
+            color: #eee;
+            opacity: 0.9;
+            transition: opacity 100ms;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+        // .sunIcon{
+        //     // transform: translateY(50px);
+
+        // }
+
+        .moonIcon {
+            color: #ffffff;
+            transform: rotate(-110deg);
+        }
+    }
+
+}
+
+.header--light {
+    background-color: white;
+
+    .header__left {
+        
+        .header__title {
+            color: black;
+        }
+    }
+}
